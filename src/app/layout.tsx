@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AnswersProvider } from "./context/AnswersContext";
 import { EvaluationsProvider } from "./context/EvaluationsContext";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "自己分析アプリ｜あなたの価値観を発見する",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <AnswersProvider>
           <EvaluationsProvider>{children}</EvaluationsProvider>
         </AnswersProvider>
+        <Analytics />
       </body>
     </html>
   );
